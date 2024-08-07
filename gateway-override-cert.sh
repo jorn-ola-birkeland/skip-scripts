@@ -6,7 +6,7 @@ REQUIRED_ARGS=4
 
 # Check if the number of arguments is less than the required number
 if [ "$#" -lt "$REQUIRED_ARGS" ]; then
-  echo "This script will copy over a secret from one cluster to another, replacing last random prefix with '-manual'"
+  echo "This script will pause skiperator reconciling for a specific gateway and replace the name of the certificate secret"
   echo "Usage: $0 <CONTEXT> <NAMESPACE> <APP_NAME> <SECRET_NAME>"
   exit 1
 fi
