@@ -1,0 +1,38 @@
+# nonk8s
+apiVersion: "backstage.io/v1alpha1"
+kind: "Component"
+metadata:
+  name: "skip-scripts"
+  tags:
+  - "internal"
+spec:
+  type: "ops"
+  lifecycle: "production"
+  owner: "skip"
+  system: "skip"
+---
+apiVersion: "backstage.io/v1alpha1"
+kind: "Group"
+metadata:
+  name: "security_champion_skip-scripts"
+  title: "Security Champion skip-scripts"
+spec:
+  type: "security_champion"
+  parent: "it_security_champions"
+  members:
+  - "omaen"
+  children:
+  - "resource:skip-scripts"
+---
+apiVersion: "backstage.io/v1alpha1"
+kind: "Resource"
+metadata:
+  name: "skip-scripts"
+  links:
+  - url: "https://github.com/kartverket/skip-scripts"
+    title: "skip-scripts på GitHub"
+spec:
+  type: "repo"
+  owner: "security_champion_skip-scripts"
+  dependencyOf:
+  - "component:skip-scripts"
